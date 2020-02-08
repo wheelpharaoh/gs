@@ -8,5 +8,9 @@ find . -name "*DS_Store" -print0 | xargs -0 rm {};
 find . -name "*.zip" -execdir unzip -u {} \; -exec rm {} \;
 
 #decrypt
-find . -name "*.dat" -exec /Users/jo/dev/gs/scripts/decrypt_xxtea.py {} \;
-/Users/jo/dev/gs/scripts/masters.sh ~/Downloads/*.zip
+find . -name "*.dat" -exec ./scripts/decrypt_xxtea.py {} \;
+
+./masters.sh ~/Downloads/*.zip
+
+#unpack
+find . -name "*.png" -print0 | cut -d '.png' -f1 | xargs -0 ./scripts/unpack_texture.py {};
