@@ -158,7 +158,7 @@ class DumpLoot:
 					enc_req_body = req_payload['body']
 					req_body = json.loads(self.c.decrypt(enc_req_body, self.enc_key))
 					if 'consume_id' in req_body:
-						req_body['consume_id'] = 70040700
+						req_body['consume_id'] = 70039800
 						re_enc_content = self.c.encrypt(req_body, self.enc_key)
 						re_encoded_body = re_enc_content.decode('utf-8')
 						req_payload['body'] = re_encoded_body
