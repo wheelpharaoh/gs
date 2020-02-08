@@ -1,0 +1,16 @@
+<!-- Include the JavaScript and CSS files -->
+<script src="https://esotericsoftware.com/files/spine-player/3.7/spine-player.js"></script>
+<link rel="stylesheet" href="https://esotericsoftware.com/files/spine-player/3.7/spine-player.css">
+
+<!-- Create a container element -->
+<div id="player"></div>
+
+<!-- Create the player with your settings and container ID -->
+<script>
+new spine.SpinePlayer("player", {
+ jsonUrl: "link_298299.json",
+ atlasUrl: "link_298299.atlas",
+ animation: "linkSkill_298",
+ backgroundColor: "#00000000",
+});
+</script>
