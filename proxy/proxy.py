@@ -20,6 +20,16 @@ class DumpLoot:
 		self.hack = True
 
 
+	def drops_enemy(self, body):
+		# [
+		#  [{'drop_player_id': -1, 'drop_type': 28, 'box_rarity': 1, 'box_type': 2, 'value': 1, 'drop_id': 102010}], 
+		#  [{'drop_player_id': -1, 'drop_type': 9, 'box_rarity': 3, 'value': 1, 'custam_parameter': {'level': 1}, 'box_type': 1, 'drop_id': 101535411}]
+		# ]
+		# [
+		#  [{'drop_player_id': -1, 'drop_type': 5, 'box_rarity': 1, 'box_type': 2, 'value': 1, 'drop_id': 100913}]
+		# ]
+
+		enemy_drops = []
 		blist = body['result']['quest']['battle_list']
 		for i in blist:
 			for j in i['enemy_list']:
