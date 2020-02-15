@@ -46,11 +46,12 @@ class Crypter(object):
 		self.encoder=PKCS7Encoder()
 	
 	def decrypt(self,input,key):
-		aes_new = AES.new(base64.b64decode(key), AES.MODE_CBC, '\x00'*16)
+		key = base64.b64decode(key)
+		aes_new = AES.new(key, AES.MODE_CBC, bytes('\x00'*16, 'utf-8'))
 		aes_decrypt = aes_new.decrypt(base64.b64decode(input))
 		r = self.encoder.decode(aes_decrypt)
 		return r
 
 	def encrypt(self,input,key):
 		padded_data=self.encoder.encode(json.dumps(input))
-		return base64.b64encode(AES.new(base64.b64decode(key), AES.MODE_CBC, '\x00'*16).encrypt(padded_data))
+		return base64.b64encode(AES.new(base64.b64decode(key), AES.MODE_CBC, bytes('\x00'*16, 'utf-8')).encrypt(padded_data))
