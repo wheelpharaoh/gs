@@ -44,7 +44,7 @@ sortedcontainers==2.0.5
 tornado==5.1.1
 tqdm==4.32.1
 ujson==1.35
-urllib3==1.25.3
+urllib3==1.26.5
 urwid==2.0.1
 wcwidth==0.1.7
 wsproto==0.11.0
